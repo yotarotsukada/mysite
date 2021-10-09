@@ -1,0 +1,239 @@
+/***** common *****/
+
+h1, h2, h3, h4, p, a, li {
+  margin: 0;
+  padding: 0;
+  font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #707070;
+}
+p {
+    font-size: 16px;
+    line-height: 220%;
+    text-align: justify;
+}
+a {
+    text-decoration: none;
+}
+ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+div {
+    margin: 0;
+}
+
+/* h2 */
+h2 {
+    font-size: 35px;
+    padding: auto;
+}
+.h2_container {
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+/* text container */
+.text_container {
+    width: 100%;
+    padding: 0 calc((100% - 530px) / 2);
+}
+.text_container p {
+    width: 530px;
+    margin-bottom: 16px;
+}
+
+/***** page structure *****/
+
+header {
+    max-width: 1100px;
+    margin: auto;
+}
+.content_wrapper {
+    position: relative;
+    max-width: 1100px;
+    margin: auto;
+}
+#message {
+    padding-top: 0;
+    height: calc(100vh + 200px);
+    height: calc(80vh + 200px); /* <= アニメーション未実装ver */
+}
+#works{
+    padding-top: 150px;
+}
+#skills{
+    padding-top: 100px;
+}
+#contact{
+    padding-top: 150px;
+    height: calc(100vh - 200px);
+}
+footer {
+    position: relative;
+    height: 200px;
+    background-color: #7c9473;
+}
+
+/***** header *****/
+
+.logo_container {
+    display: flex;
+    width: 90%;
+    min-height: calc(100vh - 100px);
+    margin: auto;
+    padding: 0 110px 0 80px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.square {
+    width: 250px;
+    height: 250px;
+    background-color: #7c9473;
+    box-shadow: 15px 15px 0 0 #cfdac8;
+}
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 2.8px;
+}
+.subhead {
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 2.2px;
+    text-align: center;
+}
+
+/* header nav */
+.header_nav {
+    width: 90%;
+    height: 100px;
+    margin: auto;
+}
+.header_nav ol {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.header_nav li {
+    width: 200px;
+    font-size: 25px;
+    text-align: center;
+}
+.header_nav a {
+    padding: 15px;
+}
+.header_nav a:hover {
+    opacity: 0.7;
+}
+
+/***** message *****/
+
+#copy_container {
+    display: flex;
+    height: 100vh;
+    height: 60vh; /* <= アニメーション未実装ver */
+    align-items: center;
+    text-align: center;
+}
+.copy {
+    width: 100%;
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: 2.2px;
+    text-align: center;
+}
+#message .text_container {
+    position: absolute;
+    top: calc(50vh + 130px);
+    top: calc(25vh + 130px); /* <= アニメーション未実装ver */
+}
+
+#message .text_container p {
+    margin-bottom: 16px;
+    text-indent: 16px;
+}
+
+/***** works *****/
+
+.work_list {
+    display: flex;
+    width: 90%;
+    margin: 0 auto 150px auto;
+    padding: 0 15px 0 1px;
+    justify-content: space-between;
+}
+.icon_box {
+    width: 230px;
+    height: 230px;
+    background-color: #000000;
+    border: 1px solid #707070;
+    box-shadow: 15px 15px 0 0 #cfdac8;
+    overflow: hidden;
+}
+.work_icon {
+    width: 100%;
+    transition: 0.3s;
+}
+.work_icon:hover {
+    transform: scale(1.05);
+    opacity: 0.7;
+}
+.work_title {
+    width: fit-content;
+    margin: 50px auto 0 auto;
+    padding: 0 1px 0 15px;
+}
+.work_title:hover {
+    opacity: 0.7;
+}
+
+/***** skills *****/
+
+.skill_list {
+    display: flex;
+    width: 700px;
+    margin: 0 auto 90px auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.skill_item {
+    width: 180px;
+    height: 60px;
+    margin-bottom: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 20px;
+    background-color: #cfdac8;
+    user-select: none;
+}
+.skill_item:hover  {
+    background-color: #7c9473;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+/***** skills *****/
+.email {
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+/***** footer *****/
+
+footer p {
+    position: absolute;
+    color: #ffffff;
+    top: 145px;
+    right: 180px;
+}
+
+/* スマホ横 / タブレット縦 / PC半分：960px未満 */
+@media (max-width: 959px) {}
+
+/* スマホ縦：520px未満  */
+@media (max-width: 519px) {}
