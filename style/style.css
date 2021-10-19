@@ -1,5 +1,4 @@
 /***** common *****/
-
 h1, h2, h3, h4, p, a, li {
   margin: 0;
   padding: 0;
@@ -25,8 +24,8 @@ div {
 
 /* h2 */
 h2 {
-    font-size: 35px;
     padding: auto;
+    font-size: 35px;
 }
 .h2_container {
     text-align: center;
@@ -35,61 +34,60 @@ h2 {
 
 /* text container */
 .text_container {
-    width: 100%;
-    padding: 0 calc((100% - 530px) / 2);
+    padding: 0 calc((100% - 528px) / 2);
 }
 .text_container p {
-    width: 530px;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
+    text-indent: 16px;
+}
+.text_container .continue {
+    text-indent: 0;
 }
 
 /***** page structure *****/
 
 header {
+    position: relative;
     max-width: 1100px;
     margin: auto;
 }
 .content_wrapper {
     position: relative;
     max-width: 1100px;
-    margin: auto;
-}
-#message {
-    padding-top: 0;
-    height: calc(100vh + 200px);
-    height: calc(80vh + 200px); /* <= アニメーション未実装ver */
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding-top: 100px;
 }
 #works{
     padding-top: 150px;
 }
-#skills{
-    padding-top: 100px;
-}
-#contact{
-    padding-top: 150px;
-    height: calc(100vh - 200px);
-}
 footer {
     position: relative;
     height: 200px;
+    margin-top: 200px;
     background-color: #7c9473;
 }
 
 /***** header *****/
 
+/* header top */
 .logo_container {
     display: flex;
     width: 90%;
-    min-height: calc(100vh - 100px);
+    height: calc(100vh - 100px);
     margin: auto;
     padding: 0 110px 0 80px;
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    /* background-color: #cfdac8; */
 }
 .square {
-    width: 250px;
-    height: 250px;
+    width: 25%;
+    min-width: 180px;
+    min-height: 180px;
+    /* margin-left: 11%; */
+    padding-top: 25%; /* 正方形のheight */
     background-color: #7c9473;
     box-shadow: 15px 15px 0 0 #cfdac8;
 }
@@ -101,10 +99,9 @@ h1 {
 .subhead {
     font-size: 35px;
     font-weight: bold;
-    letter-spacing: 2.2px;
+    letter-spacing: max(2.2px);
     text-align: center;
 }
-
 /* header nav */
 .header_nav {
     width: 90%;
@@ -116,11 +113,10 @@ h1 {
     height: 100%;
     justify-content: space-between;
     align-items: center;
-
 }
 .header_nav li {
     width: 200px;
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
 }
 .header_nav a {
@@ -134,44 +130,39 @@ h1 {
 
 #copy_container {
     display: flex;
-    height: 100vh;
-    height: 60vh; /* <= アニメーション未実装ver */
-    align-items: center;
-    text-align: center;
+    width: 100%;
+    height: 54vh;
+    align-items: flex-end;
+    justify-content: center;
 }
 .copy {
-    width: 100%;
-    font-size: 38px;
+    line-height: 8vh;
+    font-size: 40px;
     font-weight: bold;
-    letter-spacing: 2.2px;
+    letter-spacing: 2.5px;
     text-align: center;
 }
 #message .text_container {
-    position: absolute;
-    top: calc(50vh + 130px);
-    top: calc(25vh + 130px); /* <= アニメーション未実装ver */
-}
-
-#message .text_container p {
-    margin-bottom: 16px;
-    text-indent: 16px;
+    margin-top: 100px;
 }
 
 /***** works *****/
 
 .work_list {
     display: flex;
-    width: 90%;
-    margin: 0 auto 150px auto;
+    width: 82%;
+    margin: auto;
     padding: 0 15px 0 1px;
     justify-content: space-between;
 }
+.work_list li {
+    width: 23%;
+}
 .icon_box {
-    width: 230px;
-    height: 230px;
+    width: 100%;
     background-color: #000000;
     border: 1px solid #707070;
-    box-shadow: 15px 15px 0 0 #cfdac8;
+    box-shadow: 15px 15px 0 0 #e8eae6;
     overflow: hidden;
 }
 .work_icon {
@@ -192,19 +183,19 @@ h1 {
 }
 
 /***** skills *****/
-
 .skill_list {
     display: flex;
     width: 700px;
-    margin: 0 auto 90px auto;
+    width: calc(60% + 40px);
+    margin: auto;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-between;
+    justify-content: space-around;
 }
 .skill_item {
-    width: 180px;
-    height: 60px;
-    margin-bottom: 60px;
+    width: 27%;
+    min-width: 150px;
+    margin: 0 min(15px);
+    margin-bottom: calc(5% + 15px);
     line-height: 60px;
     text-align: center;
     font-size: 20px;
@@ -217,9 +208,9 @@ h1 {
     transition: 0.3s;
 }
 
-/***** skills *****/
+/***** contact *****/
 .email {
-    padding: 10px 0;
+    padding: 20px 0;
     font-weight: bold;
 }
 
@@ -233,7 +224,148 @@ footer p {
 }
 
 /* スマホ横 / タブレット縦 / PC半分：960px未満 */
-@media (max-width: 959px) {}
+@media (max-width: 959px) {
+
+/***** common *****/
+h2 {
+    font-size: 25px;
+}
+.h2_container {
+    margin-bottom: 50px;
+}
+p {
+    font-size: 14px;
+}
+.text_container {
+    padding: 0 22.5%;
+}
+
+/***** structure *****/
+.content_wrapper {
+    margin-bottom: 25px;
+}
+#works{
+    padding-top: 100px;
+}
+
+/***** header *****/
+.logo_container {
+    height: calc(100vh - 80px);
+    padding-left: 11%;
+    padding-right: 8%;
+}
+.square {
+    margin-right: 40px;
+}
+h1 {
+    font-size: 40px;
+}
+.subhead {
+    font-size: 25px;
+}
+.copy {
+    font-size: 25px;
+}
+.header_nav li {
+    font-size: 16px;
+}
+nav {
+    height: 80px;
+}
+
+/***** skills *****/
+.skill_list {
+    width: calc(40% + 232px);
+}
+.skill_item {
+    font-size: 16px;
+    line-height: 300%;
+}
+
+/***** work *****/
+.work_list {
+    flex-direction: column;
+    width: 50%;
+}
+.work_list li {
+    width: 100%;
+}
+.work_title {
+    margin: 30px auto 50px auto;
+}
+
+}
 
 /* スマホ縦：520px未満  */
-@media (max-width: 519px) {}
+@media (max-width: 519px) {
+
+/***** header *****/
+.logo_container {
+    position: relative;
+    padding: 0;
+    align-items: flex-start;
+}
+.square {
+    position: absolute;
+    top: 12vh;
+    margin: auto;
+    left: calc((100% - 180px) / 2 - 7.5px);
+}
+.name_container {
+    margin: 48vh auto 0 auto;
+}
+.subhead {
+    font-size: 25px;
+}
+.scroll_container {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    border-radius: 50%;
+    background-color: #e8eae6;
+    color: #ffffff;
+}
+.scroll_container p::before {
+    display: block;
+    height: 10px;
+    width: 10px;
+    background-color: #707070;
+}
+.scroll_container p {
+    line-height: 50px;
+    text-align: center;
+    user-select: none;
+}
+nav {
+    display: none;
+}
+
+/***** message *****/
+#copy_container {
+    width: 250px;
+    height: 58vh;
+    margin: auto;
+
+}
+#message .text_container {
+    margin-top: 60px;
+}
+
+/***** skills *****/
+.skill_list {
+    width: 80%;
+}
+.skill_item {
+    min-width: 90px;
+}
+.omission {
+    display: none;
+}
+
+/***** foorer *****/
+footer p {
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+}
