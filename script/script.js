@@ -1,15 +1,28 @@
-/***** ページ内リンクのスクロール *****/
+/***** DOMの読み込み完了時に発火 *****/
 window.addEventListener('DOMContentLoaded', () => {
+
+  /***** スクロール位置の取得 *****/
+  let scrollY = window.pageYOffset;
+  window.addEventListener('scroll', function () {
+    scrollY = window.pageYOffset;
+  });
+
+  /***** vhの取得 *****/
+  let vh = window.innerHeight;
+  window.onresize = () => {
+    vh = window.innerHeight;
+  }
+
+  /***** ページ内リンクのスクロール *****/
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
   const anchorLinksArr = Array.prototype.slice.call(anchorLinks);
-  console.log(anchorLinks);
 
   anchorLinksArr.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
       const targetId = link.hash;
       const targetElement = document.querySelector(targetId);
-      const targetOffsetTop = window.pageYOffset + targetElement.getBoundingClientRect().top;
+      const targetOffsetTop = scrollY + targetElement.getBoundingClientRect().top;
 
       window.scrollTo({
         top: targetOffsetTop,
@@ -17,40 +30,26 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  /***** スクロール位置を取得してのfadein *****/
+  const fadeElems = document.querySelectorAll('.fade');
+  const fadeElemsArr = Array.prototype.slice.call(fadeElems);
+  let fadePosFromBottom = vh / 2;
+  let fadePosFromTop = vh - fadePosFromBottom;
+
+  fadeElemsArr.forEach(fade => {
+    let fadeOffsetTop = fade.getBoundingClientRect().top - fadePosFromTop;
+
+    let hasActiveClass = false;
+    window.addEventListener('scroll', () => {
+
+      if (!hasActiveClass && scrollY >= fadeOffsetTop) {
+        fade.className += ' isActive';
+        hasActiveClass = true;
+      }
+    })
+  });
 });
 
 
 /***** 未対応 *****/
-
-/*
-$(function () {
-  $(window).on('load scroll', function () {
-    $('.scrollAnimation').each(function () {
-      //ターゲットの位置を取得
-      var target = $(this).offset().top;
-      //スクロール量を取得
-      var scroll = $(window).scrollTop();
-      //ウィンドウの高さを取得
-      var height = $(window).height();
-      //ターゲットまでスクロールするとフェードインする
-      if (scroll > target - height) {
-        //クラスを付与
-        $(this).addClass('active');
-      }
-    });
-  });
-});
-
-const scrollAnimationElm = document.getElementById('text_container');
-const scrollAnimationFunc = function () {
-
-  const triggerMargin = 300;
-  if (window.innerHeight > scrollAnimationElm.getBoundingClientRect().top + triggerMargin) {
-    scrollAnimationElm.classList.add('show');
-  }
-
-}
-
-window.addEventListener('load', scrollAnimationFunc);
-window.addEventListener('scroll', scrollAnimationFunc);
-*/

@@ -8,10 +8,14 @@
   <!-- page settings -->
   <title>Yotaro Tsukada | Home</title>
   <meta name="description" content="webサイトクリエイター塚田陽太郎のホームページです。webページ制作にまつわる各種ご依頼を承っております。">
-  <meta name="keywords" content="webサイト制作, ウェブサイト制作, サイト制作">
+  <meta name="keywords" content="塚田, 陽太郎, 塚田陽太郎, tsukada, yotaro, yotarotsukada, webサイト制作, ウェブサイト制作, サイト制作">
   <!-- CSS -->
   <link href="https://unpkg.com/sanitize.css" rel="stylesheet">
-  <link href="style/style.css" rel="stylesheet">
+  <link href="style/style.min.css" rel="stylesheet">
+  <!-- <link href="style/style.css" rel="stylesheet"> -->
+  <!-- JS -->
+  <script defer src="script/script.min.js"></script>
+  <!-- <script defer src="script/script.js"></script> -->
   <!-- jQuery -->
   <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
 </head>
@@ -38,11 +42,11 @@
     </nav>
   </header>
 
-  <div id="message" class="content_wrapper">
-    <div id="copy_container">
-      <p class="copy">Build a website, create the future.</p>
+  <div id="message" class="message wrapper">
+    <div class="copy_container">
+      <p class="copy fade">Build a website, create the future.</p>
     </div>
-    <div class="text_container">
+    <div class="text_container fade">
       <p>
         はじめまして、塚田陽太郎と申します。エンジニア兼デザイナーとしてwebサイト制作を専門的に手がけております。幅広い経験を通して培った「細部まで崩れないコード」と「想いが伝わるデザイン」を武器に、最初から最後までお客様に寄り添いながらwebサイトを開発いたします。
       </p>
@@ -54,12 +58,12 @@
     </div>
   </div>
 
-  <div id="works" class="content_wrapper">
-    <div class="h2_container">
+  <div id="works" class="works wrapper">
+    <div class="h2_container fade">
       <h2>Works</h2>
     </div>
     <ul class="work_list">
-      <li>
+      <li class="fade">
         <div class="icon_box">
           <a href="https://easy-densuke.herokuapp.com/"><img class="work_icon" src="image/easy_densuke.png"></a>
         </div>
@@ -67,7 +71,7 @@
           <a href="https://easy-densuke.herokuapp.com/">伝助時短ツール</a>
         </p>
       </li>
-      <li>
+      <li class="fade">
         <div class="icon_box">
           <a href="https://anywhere-arcade.herokuapp.com/slide"><img class="work_icon" src="image/slide.png"></a>
         </div>
@@ -75,7 +79,7 @@
           <a href="https://anywhere-arcade.herokuapp.com/slide">スライドパズル</a>
         </p>
       </li>
-      <li>
+      <li class="fade">
         <div class="icon_box">
           <a href="https://anywhere-arcade.herokuapp.com/tetrisVS/solo"><img class="work_icon"
               src="image/tetris.png"></a>
@@ -87,11 +91,11 @@
     </ul>
   </div>
 
-  <div id="skills" class="content_wrapper">
-    <div class="h2_container">
+  <div id="skills" class="skills wrapper">
+    <div class="h2_container fade">
       <h2>Skills</h2>
     </div>
-    <ul class="skill_list">
+    <ul class="skill_list fade">
       <li class=skill_item>HTML 5</li>
       <li class=skill_item>CSS 3</li>
       <li class=skill_item>JavaScript</li>
@@ -108,11 +112,11 @@
     </ul>
   </div>
 
-  <div id="contact" class="content_wrapper">
-    <div class="h2_container">
+  <div id="contact" class="contact wrapper">
+    <div class="h2_container fade">
       <h2>Contact</h2>
     </div>
-    <div class="text_container">
+    <div class="text_container fade">
       <p>現在、コンタクトフォームの準備中につき、お仕事のご依頼はEメールにてお伺いしております。<br>
         <span class="email">yotarotsukada[at]gmail.com<br></span>
         まで、どうぞお気軽にご連絡ください。メールの到着日より5日以内に、こちらよりご返信を差し上げます。
@@ -123,9 +127,6 @@
   <footer>
     <p>©︎2021 yotarotsukada</p>
   </footer>
-
-  <!-- JS -->
-  <script src="script/script.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,11 @@
 /***** common *****/
-h1, h2, h3, h4, p, a, li {
+body h1,
+body h2,
+body h3,
+body h4,
+body p,
+body a,
+body li {
   margin: 0;
   padding: 0;
   font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -49,16 +55,16 @@ h2 {
 header {
     position: relative;
     max-width: 1100px;
-    margin: auto;
+    margin: 0 auto;
 }
-.content_wrapper {
+.wrapper {
     position: relative;
     max-width: 1100px;
     margin: 0 auto;
     margin-bottom: 50px;
     padding-top: 100px;
 }
-#works{
+.works{
     padding-top: 150px;
 }
 footer {
@@ -80,13 +86,11 @@ footer {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    /* background-color: #cfdac8; */
 }
 .square {
     width: 25%;
     min-width: 180px;
     min-height: 180px;
-    /* margin-left: 11%; */
     padding-top: 25%; /* 正方形のheight */
     background-color: #7c9473;
     box-shadow: 15px 15px 0 0 #cfdac8;
@@ -130,8 +134,10 @@ h1 {
 }
 
 /***** message *****/
-
-#copy_container {
+.message {
+    padding: 0;
+}
+.copy_container {
     display: flex;
     width: 100%;
     height: 54vh;
@@ -145,7 +151,7 @@ h1 {
     letter-spacing: 2.5px;
     text-align: center;
 }
-#message .text_container {
+.message .text_container {
     margin-top: 100px;
 }
 
@@ -244,10 +250,10 @@ p {
 }
 
 /***** structure *****/
-.content_wrapper {
+.wrapper {
     margin-bottom: 25px;
 }
-#works{
+.works{
     padding-top: 100px;
 }
 
@@ -345,13 +351,13 @@ nav {
 }
 
 /***** message *****/
-#copy_container {
+.copy_container {
     width: 250px;
     height: 58vh;
     margin: auto;
 
 }
-#message .text_container {
+.message .text_container {
     margin-top: 60px;
 }
 
@@ -372,4 +378,19 @@ footer p {
     width: 100%;
     text-align: center;
 }
+}
+
+/* animation */
+.fade {
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+    /* background-color: #7c9473; */
+}
+.isActive {
+    transition: 0.5s;
+    opacity: 1;
+    user-select: all;
+    pointer-events: all;
+    /* background-color: transparent; */
 }
