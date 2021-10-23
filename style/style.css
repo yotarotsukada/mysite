@@ -382,15 +382,9 @@ footer p {
 
 /* animation */
 .fade {
-    opacity: 0;
-    user-select: none;
-    pointer-events: none;
-    /* background-color: #7c9473; */
+    visibility: hidden;
+    transition: 0.5s;
 }
 .isActive {
-    transition: 0.5s;
-    opacity: 1;
-    user-select: all;
-    pointer-events: all;
-    /* background-color: transparent; */
+    visibility: visible;
 }
